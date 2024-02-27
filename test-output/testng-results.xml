@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="1" passed="0" failed="1" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2024-02-27T20:51:24 IST" name="Your Suite Name" finished-at="2024-02-27T20:51:31 IST" duration-ms="7208">
+    <groups>
+      <group name="cucumber">
+        <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runners.myrunner@4ec4f3a0]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
+      </group> <!-- cucumber -->
+    </groups>
+    <test started-at="2024-02-27T20:51:24 IST" name="Your Test" finished-at="2024-02-27T20:51:31 IST" duration-ms="7208">
+      <class name="runners.myrunner">
+        <test-method is-config="true" signature="setUpClass(org.testng.ITestContext)[pri:0, instance:runners.myrunner@4ec4f3a0]" started-at="2024-02-27T20:51:24 IST" name="setUpClass" finished-at="2024-02-27T20:51:24 IST" duration-ms="802" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[org.testng.TestRunner@31dfc6f5]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUpClass -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runners.myrunner@4ec4f3a0]" started-at="2024-02-27T20:51:24 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2024-02-27T20:51:31 IST" duration-ms="6157" status="FAIL">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Signup with invalid DOB"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["User Signup"]]>
+              </value>
+            </param>
+          </params>
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[actual and expected error did not match]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: actual and expected error did not match
+at org.testng.Assert.fail(Assert.java:99)
+at mystepdefs.signup.i_should_see_an_error_message_indicating_please_match_the_requested_format(signup.java:116)
+at ✽.I should see an error message indicating please match the requested format(file:///C:/Users/hey1d/OneDrive/Desktop/learn/digitalbank/src/test/resources/features/tharun_signup/DOB.feature:7)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:runners.myrunner@4ec4f3a0]" started-at="2024-02-27T20:51:31 IST" name="tearDownClass" finished-at="2024-02-27T20:51:31 IST" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDownClass -->
+      </class> <!-- runners.myrunner -->
+    </test> <!-- Your Test -->
+  </suite> <!-- Your Suite Name -->
+</testng-results>
