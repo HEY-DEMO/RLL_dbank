@@ -1,1 +1,5 @@
-16:23:30.136 [main] INFO  - user is in Deposit page
+16:39:28.460 [main] INFO  - user is in login page
+16:39:28.679 [main] INFO  - user enter Username and password
+16:39:33.589 [main] INFO  - user clicks Signin button
+16:39:33.650 [main] INFO  - user click the checking
+16:39:35.740 [main] INFO  - user clicks view checking

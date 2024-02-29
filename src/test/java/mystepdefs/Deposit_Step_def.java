@@ -47,7 +47,7 @@ public class Deposit_Step_def {
 
 	@When("Validating Reset button")
 	public void validating_reset_button() throws InterruptedException  {
-	
+	Thread.sleep(3000);
 		ds.clickonReset();
 		Assert.assertTrue(ds.validate_Reset_Btn(), "Assert failed- Reset button not working");
 		logger.info("Validating Reset button");
