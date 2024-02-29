@@ -3,7 +3,7 @@
 <suite name="Your Suite Name" verbose="1" >
     <listeners>
         <listener class-name="listeners.screenshot" />
-        <!--listener class-name="listeners.MyRetry" /-->
+        <listener class-name="listeners.annotations" />
     </listeners>
 
     <test name="Your Test">

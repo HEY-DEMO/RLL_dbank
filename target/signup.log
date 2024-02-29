@@ -1,10 +1,1 @@
-20:52:53.370 [main] INFO  - Edgeddriver is initiated
-20:52:55.987 [main] INFO  - user is on signup page
-20:52:56.360 [main] INFO  - user enters his information with invalid DOB
-20:52:56.408 [main] INFO  - user clciks on next button
-20:52:59.048 [main] INFO  - Edgeddriver is initiated
-20:53:01.445 [main] INFO  - user is on signup page
-20:53:04.035 [main] INFO  - user enters information with already existing mail id
-20:53:05.726 [main] INFO  - user clciks on next button
-20:53:07.287 [main] INFO  - error message is displayed at email field
-20:53:09.698 [main] INFO  - Edgeddriver is initiated
+16:23:30.136 [main] INFO  - user is in Deposit page

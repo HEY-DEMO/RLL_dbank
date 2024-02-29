@@ -14,8 +14,16 @@ import listeners.MyRetry;
 
 
 @CucumberOptions(
-    features = {"src/test/resources/features/tharun_signup/sign.feature"}, // Path to your feature files
-    glue = {"mystepdefs"} // Package where your step definitions are located
+    features = {"src/test/resources/features/all/deposits.feature"}, // Path to your feature files
+    glue = {"mystepdefs"},
+    dryRun=false,  // it means you want Cucumber to execute the actual test code associated with the Gherkin's steps during the test run and if you give true it will only provide the steps that are not glued.
+    plugin = {
+        "html:target/Digital_bank.html",
+        "pretty",
+        "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:",
+        "timeline:test-output-thread/"
+    }
+// Package where your step definitions are located
 )
 public class myrunner extends AbstractTestNGCucumberTests   { 
 	

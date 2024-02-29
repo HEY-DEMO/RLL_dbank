@@ -41,15 +41,14 @@ public class screenshot implements ITestListener {
             return;
         }
 
-        shot(result.getName()+".png");
-
+        shot(result.getMethod().getMethodName() + ".png");
           
     }
     private static void shot(String filename) {
 		TakesScreenshot sc = (TakesScreenshot) driver;
 		File src = sc.getScreenshotAs(OutputType.FILE);
 		try {
-		FileHandler.copy(src, new File("screenshots\\"+filename));
+		FileHandler.copy(src, new File("Screenshot\\"+filename));
 		}catch(IOException e) {
 			e.printStackTrace();
 		}

@@ -17,6 +17,8 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.testng.Assert;
+import org.testng.annotations.Listeners;
+import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 
 import com.aventstack.extentreports.ExtentReports;
@@ -31,17 +33,19 @@ import io.cucumber.java.BeforeAll;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import listeners.screenshot;
+import listeners.*;
 import pages.signup_page;
+import pages.withdrawpage;
 
 /////////--------------------------------------Tharun--------------------------------------------
+
 public class signup {
 
 	
 	 private static final Logger logger = LogManager.getLogger(signup.class);
-	 public WebDriver driver;
-	    signup_page signup_page;
-	    static ExtentSparkReporter spark = new ExtentSparkReporter("target/error.html");
+	 private WebDriver driver;
+	    private signup_page signup_page;
+	    static ExtentSparkReporter spark = new ExtentSparkReporter("target/signup.html");
 		
 		
 		static ExtentTest test;
@@ -55,28 +59,30 @@ public class signup {
 			test = extent.createTest("signup");
 
 		}
-	@Before
-    public void setup() {
-		ExtentSparkReporter spark = new ExtentSparkReporter("target/error.html");
-		extent.attachReporter(spark);
-        // Initialize WebDriver
-        System.setProperty("webdriver.edge.driver", "drivers/msedgedriver.exe");
-        driver = new EdgeDriver();
-        screenshot.setDriver(driver);
-        logger.info("Edgeddriver is initiated");
-        signup_page = new signup_page(driver);
-        
-    }
+//	@Before
+//    public void setup() {
+//		ExtentSparkReporter spark = new ExtentSparkReporter("target/all.html");
+//		extent.attachReporter(spark);
+//        // Initialize WebDriver
+//        System.setProperty("webdriver.edge.driver","drivers/msedgedriver.exe");
+//        driver = new EdgeDriver();
+//        screenshot.setDriver(driver);
+//    
+//        logger.info("Edgeddriver is initiated");
+//        signup_page = new signup_page(driver);
+//        
+//    }
+//	
 	
-	@AfterAll
-	public static void after_all() {
-		
-//		driver.close();
-	}
+
 
 
 	@Given("I am on the signup page")
 	public void i_am_on_the_signup_page() {
+		System.setProperty("webdriver.edge.driver","drivers/msedgedriver.exe");
+		 driver =new  EdgeDriver();
+		 screenshot.setDriver(driver);
+		 signup_page = new signup_page(driver);
 		driver.get("http://dbankdemo.com/bank/signup");
 		 logger.info("user is on signup page");
 		 //test = extent.createTest("signup");
@@ -101,13 +107,13 @@ public class signup {
 		signup_page.clickNext();
 		 logger.info("user clciks on next button");
 	}
-
+	@Test(retryAnalyzer=MyRetry.class)
 	@Then("I should see an error message indicating please match the requested format")
 	public void i_should_see_an_error_message_indicating_please_match_the_requested_format() throws InterruptedException {
         
 
 		test.fail("actual and expected error did not match for DOB");
-		test.fail(MediaEntityBuilder.createScreenCaptureFromPath("C:\\Users\\hey1d\\OneDrive\\Desktop\\learn\\digitalbank\\screenshots\\runScenario.png").build());
+		test.fail(MediaEntityBuilder.createScreenCaptureFromPath("C:\\Users\\hey1d\\OneDrive\\Desktop\\learn\\digitalbank\\Screenshot\\runScenario.png").build());
 		String actual = driver.findElement(By.id("dob")).getAttribute("validationMessage");
 	   //System.out.println(actual);
 	   if (actual!="Please match the requested format") {
@@ -115,7 +121,7 @@ public class signup {
 		   
 		   Assert.fail("actual and expected error did not match");
 		   logger.error("actual and expected error did not matched");
-		   
+		   driver.quit();
 	   }
 	 
 	}
@@ -169,7 +175,7 @@ public class signup {
 		String actual = driver.findElement(By.id(field)).getAttribute("validationMessage");
 		String expected1 ="Please match the requested format.";
 		String expected2 ="Please include an '@' in the email address. 'asgmail.com' is missing an '@'.";
-		String expected3 ="Please fill out this field.";
+		String expected3 ="Passwords Do Not Match";
 		   //System.out.println(actual);
 		   if ((actual.equals(expected2)||(actual.equals(expected1)))||(actual.equals(expected3))) {
 			   logger.info("user see an error message at "+field);
@@ -183,6 +189,7 @@ public class signup {
 		   logger.error("user did not see an error message at "+field);
 
 		   test.fail("user did not see an error message at "+field);
+		   driver.quit();
 		   }
 		   
 }
@@ -219,13 +226,14 @@ public class signup {
 			   //test.fail("user does not see an error at confirm password field");
 			   logger.error("user does not see an error at confirm password field");
 		   Assert.fail("actual and expected error did not match");
+		   driver.quit();
 		   }
 	}
 	
 	@When("I fill in the signup form with missing information and click next")
 	public void i_fill_in_the_signup_form_with_missing_information_and_click_next() throws IOException {
 
-		 FileInputStream file = new FileInputStream("C:/Users/hey1d/OneDrive/Desktop/RLL/data.xlsx");
+		 FileInputStream file = new FileInputStream("C:\\Users\\hey1d\\Pictures\\signup.xlsx");
 	        @SuppressWarnings("resource")
 			Workbook workbook = new XSSFWorkbook(file); // Use XSSFWorkbook for .xlsx files
 	        Sheet sheet = workbook.getSheet("Sheet1");
@@ -255,8 +263,6 @@ public class signup {
 	            signup_page.enterEmail(email);
 	            signup_page.enterPassword(pass);
 	            signup_page.enterConfirmPassword(cpass);
-	            
-	            
 	            // You might want to add some delay/wait here to ensure form validation is triggered
 
 	            // Click the next button
