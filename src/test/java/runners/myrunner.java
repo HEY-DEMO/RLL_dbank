@@ -14,7 +14,7 @@ import listeners.MyRetry;
 
 
 @CucumberOptions(
-    features = {"src/test/resources/features/all/deposits.feature"}, // Path to your feature files
+    features = {"src/test/resources/features/all/sign.feature"}, // Path to your feature files
     glue = {"mystepdefs"},
     dryRun=false,  // it means you want Cucumber to execute the actual test code associated with the Gherkin's steps during the test run and if you give true it will only provide the steps that are not glued.
     plugin = {
