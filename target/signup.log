@@ -1,0 +1,6 @@
+17:03:21.025 [main] INFO  - user is on signup page
+17:03:21.497 [main] INFO  - user enters his information with invalid DOB
+17:03:21.569 [main] INFO  - user clciks on next button
+17:03:26.090 [main] INFO  - user is on signup page
+17:03:29.168 [main] INFO  - user enters information with already existing mail id
+17:03:31.189 [main] INFO  - user clciks on next button

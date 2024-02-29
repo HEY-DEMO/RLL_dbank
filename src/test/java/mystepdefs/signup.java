@@ -16,6 +16,7 @@ import org.openqa.selenium.By;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.edge.EdgeOptions;
 import org.testng.Assert;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
@@ -80,7 +81,9 @@ public class signup {
 	@Given("I am on the signup page")
 	public void i_am_on_the_signup_page() {
 		System.setProperty("webdriver.edge.driver","drivers/msedgedriver.exe");
-		 driver =new  EdgeDriver();
+		EdgeOptions options= new EdgeOptions();
+		options.addArguments("--headless");
+		 driver =new  EdgeDriver(options);
 		 screenshot.setDriver(driver);
 		 signup_page = new signup_page(driver);
 		driver.get("http://dbankdemo.com/bank/signup");
