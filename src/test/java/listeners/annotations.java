@@ -1,6 +1,7 @@
 package listeners;
 
 
+
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Method;
 
@@ -13,5 +14,4 @@ public class annotations implements IAnnotationTransformer{
 		//IAnnotationTransformer.super.transform(annotation, testClass,
 		annotation.setRetryAnalyzer(MyRetry.class);
 	}
-
 }

@@ -83,9 +83,9 @@ public class signup {
 	@Given("I am on the signup page")
 	public void i_am_on_the_signup_page() {
 		System.setProperty("webdriver.edge.driver","drivers/msedgedriver.exe");
-		FirefoxOptions options= new FirefoxOptions();
-		options.addArguments("--headless");
-		 driver =new  FirefoxDriver(options);
+//		FirefoxOptions options= new FirefoxOptions();
+//		options.addArguments("--headless");
+		 driver =new  EdgeDriver();
 		 screenshot.setDriver(driver);
 		 signup_page = new signup_page(driver);
 		driver.get("http://dbankdemo.com/bank/signup");
@@ -112,7 +112,7 @@ public class signup {
 		signup_page.clickNext();
 		 logger.info("user clciks on next button");
 	}
-	@Test(retryAnalyzer=MyRetry.class)
+	
 	@Then("I should see an error message indicating please match the requested format")
 	public void i_should_see_an_error_message_indicating_please_match_the_requested_format() throws InterruptedException {
         

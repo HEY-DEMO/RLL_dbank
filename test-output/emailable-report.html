@@ -8,17 +8,22 @@
 <body>
 <table>
 <tr><th>Test</th><th># Passed</th><th># Skipped</th><th># Retried</th><th># Failed</th><th>Time (ms)</th><th>Included Groups</th><th>Excluded Groups</th></tr>
-<tr><th colspan="8">Default suite</th></tr>
-<tr><td><a href="#t0">Default test</a></td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num attn">1</td><td class="num">27,305</td><td></td><td></td></tr>
+<tr><th colspan="8">Your Suite Name</th></tr>
+<tr><td><a href="#t0">Your Test</a></td><td class="num">0</td><td class="num">0</td><td class="num attn">2</td><td class="num attn">1</td><td class="num">17,791</td><td></td><td></td></tr>
 </table>
-<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Default suite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">Default test &#8212; failed</th></tr><tr class="failedeven"><td rowspan="1">runners.myrunner</td><td><a href="#m0">runScenario</a></td><td rowspan="1">1709205243795</td><td rowspan="1">24836</td></tr></tbody>
+<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Your Suite Name</th></tr></tbody><tbody id="t0"><tr><th colspan="4">Your Test &#8212; failed</th></tr><tr class="failedeven"><td rowspan="1">runners.myrunner</td><td><a href="#m0">runScenario</a></td><td rowspan="1">1709267777995</td><td rowspan="1">5437</td></tr><tr><th colspan="4">Your Test &#8212; retried</th></tr><tr class="retriedeven"><td rowspan="2">runners.myrunner</td><td><a href="#m1">runScenario</a></td><td rowspan="2">1709267768680</td><td rowspan="2">3960</td></tr><tr class="retriedeven"><td><a href="#m2">runScenario</a></td></tr></tbody>
 </table>
-<h2>Default test</h2><h3 id="m0">runners.myrunner#runScenario</h3><table class="result"><tr class="param"><th>Parameter #1</th><th>Parameter #2</th></tr><tr class="param stripe"><td>&quot;Testing Deposit into Account&quot;</td><td>&quot;Testing dbankdemo Deposit into Account feature&quot;</td></tr><tr><th colspan="2">Exception</th></tr><tr><td colspan="2"><div class="stacktrace">java.lang.AssertionError: Assert failed- Reading amount as 0 expected [true] but found [false]
-	at org.testng.Assert.fail(Assert.java:99)
-	at org.testng.Assert.failNotEquals(Assert.java:1037)
-	at org.testng.Assert.assertTrue(Assert.java:45)
-	at mystepdefs.Deposit_Step_def.validating_submit_button_with_amount_field_as_zero(Deposit_Step_def.java:72)
-	at ✽.Validating Submit button with Amount field as zero(file:///C:/Users/hey1d/OneDrive/Desktop/learn/digitalbank/src/test/resources/features/all/deposits.feature:7)
-</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h2>Your Test</h2><h3 id="m0">runners.myrunner#runScenario</h3><table class="result"><tr class="param"><th>Parameter #1</th><th>Parameter #2</th></tr><tr class="param stripe"><td>&quot;Signup with invalid DOB&quot;</td><td>&quot;User Signup&quot;</td></tr><tr><th colspan="2">Exception</th></tr><tr><td colspan="2"><div class="stacktrace">java.lang.AssertionError: actual and expected error did not match
+	at mystepdefs.signup.i_should_see_an_error_message_indicating_please_match_the_requested_format(signup.java:127)
+	at ✽.I should see an error message indicating please match the requested format(file:///C:/Users/hey1d/OneDrive/Desktop/learn/digitalbank/src/test/resources/features/tharun_signup/DOB.feature:7)
+... Removed 1 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m1">runners.myrunner#runScenario</h3><table class="result"><tr class="param"><th>Parameter #1</th><th>Parameter #2</th></tr><tr class="param stripe"><td>&quot;Signup with invalid DOB&quot;</td><td>&quot;User Signup&quot;</td></tr><tr><th colspan="2">Exception</th></tr><tr><td colspan="2"><div class="stacktrace">java.lang.AssertionError: actual and expected error did not match
+	at mystepdefs.signup.i_should_see_an_error_message_indicating_please_match_the_requested_format(signup.java:127)
+	at ✽.I should see an error message indicating please match the requested format(file:///C:/Users/hey1d/OneDrive/Desktop/learn/digitalbank/src/test/resources/features/tharun_signup/DOB.feature:7)
+... Removed 1 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m2">runners.myrunner#runScenario</h3><table class="result"><tr class="param"><th>Parameter #1</th><th>Parameter #2</th></tr><tr class="param stripe"><td>&quot;Signup with invalid DOB&quot;</td><td>&quot;User Signup&quot;</td></tr><tr><th colspan="2">Exception</th></tr><tr><td colspan="2"><div class="stacktrace">java.lang.AssertionError: actual and expected error did not match
+	at mystepdefs.signup.i_should_see_an_error_message_indicating_please_match_the_requested_format(signup.java:127)
+	at ✽.I should see an error message indicating please match the requested format(file:///C:/Users/hey1d/OneDrive/Desktop/learn/digitalbank/src/test/resources/features/tharun_signup/DOB.feature:7)
+... Removed 1 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
 </body>
 </html>
